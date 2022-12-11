@@ -41,7 +41,7 @@ router.post('/login', async(req, res) => {
             id: user._id,
             isAdmin: user.isAdmin
         }, process.env.JWT_SECRET_KEY, {
-            expiresIn: '2h'
+            expiresIn: '1d'
         });
 
         const { password, ...others } = user._doc;

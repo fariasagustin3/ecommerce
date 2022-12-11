@@ -6,6 +6,7 @@ const authRoute = require('./routes/auth')
 const productRoute = require('./routes/product')
 const cartsRoute = require('./routes/cart')
 const ordersRoute = require('./routes/order')
+const cors = require('cors')
 
 dotenv.config()
 
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 // Middlewares
 app.use(express.json())
+app.use(cors())
 
 // Routes
 app.use('/api/user', userRoute)
